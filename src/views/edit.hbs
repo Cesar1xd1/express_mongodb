@@ -1,0 +1,22 @@
+<br>
+<div class="container">
+    
+<form class="form" action="/alumnos/{{alumno._id}}/edit" method="POST">
+    <div class="mb-3">
+    <label class="form-label" for="num_control">N. Control:</label>
+    <input class="form-control" disabled type="text" name="num_control" id="num_control" value="{{alumno.num_control}}">
+    </div>
+    
+   
+    <div class="mb-3">
+        <label  class="form-label" for="nombre">Nombre:</label>
+        <input class="form-control" type="text" name="nombre" id="nombre" value="{{alumno.nombre}}">
+    </div>    
+    
+
+    <button class="btn btn-info">Guardar</button>
+    <a class="btn btn-warning" href="/">Regresar</a>
+
+</form>
+</div>
+

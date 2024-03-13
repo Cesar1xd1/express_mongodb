@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-striped">
+  <thead>
+    
+    <tr>
+      <th scope="col">N. Control</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each alumnos}}
+    <tr>
+      <td>{{num_control}}</td>
+      <td>{{nombre}}</td>
+      <td><a class="btn btn-danger" href="/alumnos/{{_id}}/delete">eliminar</a> <a class="btn btn-primary" href="/alumnos/{{_id}}/edit">editar</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+</div>
+
