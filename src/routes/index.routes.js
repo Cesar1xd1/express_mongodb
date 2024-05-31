@@ -1,22 +1,46 @@
 import {Router} from 'express';
-import { deleteAlumno, getEdit, insertarAlumno, postEdit, renderIndex } from '../controllers/alumno.controlador';
+import { deleteAuto, getEditA, insertarAuto, postEditA,renderIndexA,renderTablaA } from '../controllers/auto.controlador';
+import { deleteCliente, getEditC, insertarCliente, postEditC,renderTablaC } from '../controllers/cliente.controlador';
 
 const router = Router();
 //Index
-router.get('/',renderIndex );
+router.get('/',renderIndexA );
+
+router.get('/tabla', renderTablaA);
+router.get('/clientes', renderTablaC);
+
+
 
 //ALTAS
 router.get('/altas',(req,res)=>{
     res.render('altas');
 });
-router.post('/alumnos/add',insertarAlumno);
+router.get('/altasC',(req,res)=>{
+    res.render('altasC');
+});
+
+//render
+router.get('/tabla',(req,res)=>{
+    res.render('tabla');
+});
+router.get('/clientes',(req,res)=>{
+    res.render('clientes');
+});
+
+
+router.post('/autos/add',insertarAuto);
+router.post('/clientes/add',insertarCliente);
 
 //BAJAS
-router.get('/alumnos/:id/delete', deleteAlumno);
+router.get('/autos/:id/delete', deleteAuto);
+router.get('/clientes/:id/deleteC', deleteCliente);
 
 //CAMBIOS
-router.get('/alumnos/:id/edit', getEdit);
-router.post('/alumnos/:id/edit' ,postEdit);
+router.get('/autos/:id/edit', getEditA);
+router.post('/autos/:id/edit' ,postEditA);
+
+router.get('/clientes/:id/editC', getEditC);
+router.post('/clientes/:id/editC' ,postEditC);
 
 //Export
 export default router;
